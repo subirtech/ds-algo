@@ -1,5 +1,8 @@
 package com.recursion;
 
+/**
+ * Complexity O(n)
+ */
 public class ValidateSortedArray {
     public static boolean isSorted(int[] input, int idx)
     {
