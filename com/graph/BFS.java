@@ -58,13 +58,25 @@ public class BFS {
 
     }
 
-    public static void bfs(ArrayList<Edge>[] graph) {
-        boolean[] visited = new boolean[graph.length];
+    public static void printAdjacencyList(ArrayList<Edge>[] graph)
+    {
+         for (int i = 0; i < graph.length; i++) {
+            ArrayList<Edge> edges = graph[i];
+            System.out.println("Source :=>" + i);
+            for (int j = 0; j < edges.size(); j++) {
+                System.out.print(edges.get(j).getDest() + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void bfs(ArrayList<Edge>[] graph, int curr, boolean[] visited) {
+
         if (graph.length == 0) return;
         int value;
         ArrayList<Edge> edges;
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(0);
+        queue.add(curr);
         while (!(queue.isEmpty())) {
             value = queue.remove();
             if (visited[value])
@@ -90,15 +102,10 @@ public class BFS {
         int v = 7;
         ArrayList<Edge>[] graph = new ArrayList[v];
         createGraph(graph);
-       /* for (int i = 0; i < graph.length; i++) {
-            ArrayList<Edge> edges = graph[i];
-            System.out.println("Source :=>" + i);
-            for (int j = 0; j < edges.size(); j++) {
-                System.out.print(edges.get(j).getDest() + " ");
-            }
-            System.out.println();
-        }*/
-
-        bfs(graph);
+        //printAdjacencyList(graph);
+        boolean[] visited = new boolean[graph.length];
+        for (int i = 0; i < visited.length; i++) {
+            bfs(graph, i, visited);
+        }
     }
 }
