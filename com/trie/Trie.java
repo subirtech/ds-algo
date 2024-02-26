@@ -56,6 +56,7 @@ public class Trie {
 
     public static void main(String[] args) {
      String[] dictionary=new String[]{"apple","water","book"};
+
      for(String word: dictionary)
          insertTrie(word);
 
