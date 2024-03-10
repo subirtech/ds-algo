@@ -24,7 +24,7 @@ public class LCS {
 
     public static void main(String[] args) {
   /*      String s1 = "ABCAB";
-        String s2 = "AECB";*/
+        String s2 = "AECB";   */
         String s1 = "AGGTAB";
         String s2 = "GXTXAYB";
         StringBuilder strb = new StringBuilder();
