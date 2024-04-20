@@ -12,6 +12,7 @@ public class NQueens {
         for (int i = 0; i < board.length; i++) {
             if (board[i][col] == 'Q') return false;
         }
+        //Check Row
         for (int i = 0; i < board.length; i++) {
             if (board[row][i] == 'Q') return false;
         }
