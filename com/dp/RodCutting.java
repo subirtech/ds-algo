@@ -13,8 +13,8 @@ public class RodCutting {
 
         for (int i = 0; i < cost.length; i++) {
             if ((n - (i + 1) >= 0)) {
-                int custCost = cost[i] + rodCut((n - (i + 1)), cost);
-                finalCost = Integer.max(finalCost, custCost);
+                int cutCost = cost[i] + rodCut((n - (i + 1)), cost);
+                finalCost = Integer.max(finalCost, cutCost);
             }
         }
         return finalCost;
