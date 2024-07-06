@@ -6,7 +6,7 @@ package com.backtracking;
  */
 public class StringPermutation {
 
-    public static void permute(String str, String permStr,int index)
+    public static void permute(String str, String permStr)
     {
        if(str.length()==0)
        {
@@ -18,13 +18,13 @@ public class StringPermutation {
         {
             char c=str.charAt(i);
             String newStr=str.substring(0,i)+str.substring(i+1);
-            permute(newStr,permStr+c,index++);
+            permute(newStr,permStr+c);
         }
 
     }
 
     public static void main(String[] args) {
 
-        permute("ABCD","",0);
+        permute("ABC","");
     }
 }
