@@ -24,7 +24,8 @@ public class DirectedCycle {
             if (rec[dest])
                 return true;
 
-            return detectCycle(graph, visited, rec, dest);
+            if(detectCycle(graph, visited, rec, dest))
+                return true;
         }
         rec[curr] = false;
 
@@ -43,14 +44,18 @@ public class DirectedCycle {
 
          */
 
-        int v = 7;
+        int v = 4;
         ArrayList<Edge>[] graph = new ArrayList[v];
         createGraph(graph);
         boolean[] visited = new boolean[graph.length];
         boolean[] rec = new boolean[graph.length];
-        int src = 0;
-        int dest = 5;
-        String path = "0";
-        System.out.println("Cycle Detected:=>" + detectCycle(graph, visited, rec, 0));
+        for(int i=0;i<graph.length;i++) {
+            if(visited[i]) continue;
+            boolean flag=detectCycle(graph, visited, rec, i);
+            if(flag) {
+                System.out.println("Cycle Detected:=>" + flag);
+                break;
+            }
+        }
     }
 }
