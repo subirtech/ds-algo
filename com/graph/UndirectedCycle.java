@@ -33,8 +33,10 @@ public class UndirectedCycle {
             if (visited[dest] && dest != parent)
                 return true;
 
-            if (!visited[dest])
-                return detectCycle(graph, visited, curr, dest);
+            if (!visited[dest]) {
+                if (detectCycle(graph, visited, curr, dest))
+                return true;
+            }
         }
 
         return false;
@@ -52,9 +54,6 @@ public class UndirectedCycle {
         ArrayList<Edge>[] graph = new ArrayList[v];
         createGraph(graph);
         boolean[] visited = new boolean[graph.length];
-        int src = 0;
-        int dest = 5;
-        String path = "0";
         System.out.println("Cycle Detected:=>"+detectCycle(graph, visited, -1, 0));
     }
 }
