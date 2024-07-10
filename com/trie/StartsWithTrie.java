@@ -3,7 +3,7 @@ package com.trie;
 /**
  * Check a particular word is prefix of any other words in the list or not.
  */
-public class StartsWith {
+public class StartsWithTrie {
 
     public static boolean startSWith(String prefix) {
         Trie.Node current = Trie.root;
